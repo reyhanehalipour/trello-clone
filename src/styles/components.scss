@@ -1,0 +1,262 @@
+/* ---------------- Board Header ---------------- */
+.board-header {
+  padding: 16px;
+  background-color: #026aa7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  input {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+}
+
+.lists-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+
+.list-column {
+  background-color: #ebecf0;
+  border-radius: 6px;
+  width: 272px;
+  flex-shrink: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.list-header {
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 6px;
+    outline: none;
+  }
+}
+
+.list-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-item {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #f4f5f7;
+  }
+}
+
+/* ---------------- Add Card ---------------- */
+.add-card {
+  margin-top: 8px;
+
+  button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    color: #172b4d;
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .add-card-input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    input {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+
+    .add-card-buttons {
+      display: flex;
+      gap: 4px;
+
+      button {
+        flex: 1;
+        background-color: #5aac44;
+        color: #fff;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #519839;
+        }
+      }
+    }
+  }
+}
+
+/* ---------------- Add List ---------------- */
+.add-list {
+  width: 272px;
+  flex-shrink: 0;
+
+  button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    color: #172b4d;
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .add-list-input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    input {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+
+    .add-list-buttons {
+      display: flex;
+      gap: 4px;
+
+      button {
+        flex: 1;
+        background-color: #5aac44;
+        color: #fff;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #519839;
+        }
+      }
+    }
+  }
+}
+
+
+.card-modal,
+.comments-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4f5f7;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  width: 400px;
+  max-width: 90%;
+  z-index: 1000;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  textarea,
+  input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+
+    button {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .save-btn {
+      background-color: #5aac44;
+      color: #fff;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+    }
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .lists-container {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .list-column,
+  .add-list {
+    width: 220px;
+  }
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 6px;
+  min-width: 300px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
